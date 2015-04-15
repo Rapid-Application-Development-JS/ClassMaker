@@ -1,15 +1,15 @@
-# Extend
+# ClassMaker
 This module allows you to implement inheritance for your classes.
 
 At first get instance of module
 ```javascript
-var extend = require("Extend");
+var ClassMaker = require("ClassMaker");
 ```
-`Extend` has only one method `extend`. This method takes as a parameter an **object** which fields and methods will be added to the new **class-hier**
+`ClassMaker` has only one method `extend`. This method takes as a parameter an **object** which fields and methods will be added to the new **class-hier**
 ```javascript
-var HeirClass = extend.extend(parentObject);
+var HeirClass = ClassMaker.extend(parentObject);
 ```
-**Note:** Method `extend` generates and returns new class with all properties of object which called method extend and all properties of parent object. It does **not change** parent object or class.
+**Note:** Method `extend` generates and returns new class with all properties of object which called method `extend` and all properties of parent object. It does **not change** parent object or class.
 
 Let's show how it works.
 First we describe the class constructor `Animal`
@@ -27,11 +27,11 @@ function Animal(name) {
 ```
 And now we create class-heir Dog
 ```javascript
-var Dog = extend.extend(new Animal("Dog"));
+var Dog = ClassMaker.extend(new Animal("Dog"));
 ```
 Please note, we have ceated an **instance** of class `Animal`. Now we can create an instance of class `Dog`. Let's do this and call method `whoAreYou`
 ```javascript
-var Dog = extend.extend(new Animal("Dog"));
+var Dog = ClassMaker.extend(new Animal("Dog"));
 var dog = new Dog;
 console.log(dog.whoAreYou());
 ```
@@ -48,7 +48,7 @@ var bird = {
     }
 };
 
-var Duck = extend.extend(new Animal("Duck"));
+var Duck = ClassMaker.extend(new Animal("Duck"));
 Duck = Duck.extend(bird);
 
 var duck = new Duck;
