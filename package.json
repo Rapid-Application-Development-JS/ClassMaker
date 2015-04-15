@@ -1,0 +1,19 @@
+{
+  "name": "ClassMaker",
+  "version": "1.0.0",
+  "description": "Extend class methods and fields",
+  "main": "classmaker.js",
+  "scripts": {
+    "test": "chai"
+  },
+  "keywords": [
+    "class",
+    "extend",
+    "expander",
+    "inheritance",
+    "inheritage",
+    "OOP"
+  ],
+  "author": "Yuriy Luchaninov <y.luchaninov@mobidev.biz> (http://mobidev.biz/)",
+  "license": "MIT"
+}
