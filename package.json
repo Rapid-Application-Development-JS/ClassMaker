@@ -1,34 +1,60 @@
 {
-  "name": "ClassMaker",
-  "version": "1.0.0",
-  "description": "Extend class methods and fields",
-  "main": "classmaker.js",
-    "repository": {
-    "type": "git",
-    "url": "https://github.com/Rapid-Application-Development-JS/ClassMaker.git"
-  },
+  "author": "Yuriy Luchaninov <y.luchaninov@mobidev.biz> (http://mobidev.biz/)",
   "bugs": {
     "url": "https://github.com/Rapid-Application-Development-JS/ClassMaker/issues"
   },
-  "scripts": {
-    "test": "chai"
+  "contributors": [
+    {
+      "email": "a.trofimenko@mobidev.biz",
+      "name": "Anton Trofimenko"
+    },
+    {
+      "email": "r.prokofeyv@mobidev.biz",
+      "name": "Prokofeyv Roman"
+    },
+    {
+      "email": "y.luchaninov@mobidev.biz",
+      "name": "Yuriy Luchaninov"
+    }
+  ],
+  "dependencies": {
   },
+  "description": "Extend class methods and fields",
+  "devDependencies": {
+    "uglifyjs": "*"
+  },
+  "directories": {
+    "doc": "docs",
+    "lib": "source",
+    "man": "man"
+  },
+  "homepage": "https://github.com/Rapid-Application-Development-JS/ClassMaker",
   "keywords": [
     "class",
     "extend",
     "expander",
     "inheritance",
     "inheritage",
-    "OOP"
+    "oop"
   ],
-    "contributors": [
-    {
-      "name": "Yuriy Luchaninov",
-      "email": "y.luchaninov@mobidev.biz"
-    }
+  "license": {
+    "type": "MIT",
+    "url": "https://github.com/Rapid-Application-Development-JS/ClassMaker/blob/master/LICENSE.md"
+  },
+  "main": [
+    "release/classmaker.min.js",
+    "release/classmaker.min.js.map"
   ],
+  "name": "classmaker",
+  "private": false,
   "readmeFilename": "README.md",
-  "homepage": "https://github.com/Rapid-Application-Development-JS/ClassMaker",
-  "author": "Yuriy Luchaninov <y.luchaninov@mobidev.biz> (http://mobidev.biz/)",
-  "license": "MIT"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rapid-Application-Development-JS/ClassMaker.git"
+  },
+  "scripts": {
+    "build-js": "uglifyjs 'source/classmaker.js' --compress --mangle --screw-ie8 --comments --lint --source-map 'release/classmaker.min.js.map' --output 'release/classmaker.min.js'",
+    "test": "mocha"
+  },
+  "version": "1.0.0"
 }
