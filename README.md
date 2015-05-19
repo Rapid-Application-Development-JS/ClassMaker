@@ -1,18 +1,23 @@
 # ClassMaker
 This module allows you to implement inheritance for your classes.
 
-At first get instance of module
+At first get a module instance:
+
 ```javascript
 var ClassMaker = require("ClassMaker");
 ```
-`ClassMaker` has only one method `extend`. This method takes as a parameter an **object** which fields and methods will be added to the new **class-hier**
+
+`ClassMaker` has only one method: `extend`. This method takes **object** as the parameter; its fields and methods will be added to the new **class-hier**.
+
 ```javascript
 var HeirClass = ClassMaker.extend(parentObject);
 ```
-**Note:** Method `extend` generates and returns new class with all properties of object which called method `extend` and all properties of parent object. It does **not change** parent object or class.
+
+>**Note:** The `extend` method generates and returns a new class with all properties of an object that called the `extend` method and all properties of the parent object. It does **not change** the parent object or the class.
 
 Let's show how it works.
-First we describe the class constructor `Animal`
+First we describe an `Animal` class constructor:
+
 ```javascript
 function Animal(name) {
 
@@ -25,11 +30,15 @@ function Animal(name) {
     }
 }
 ```
-And now we create class-heir Dog
+
+And now we create a class-heir Dog:
+
 ```javascript
 var Dog = ClassMaker.extend(new Animal("Dog"));
 ```
-Please note, we have ceated an **instance** of class `Animal`. Now we can create an instance of class `Dog`. Let's do this and call method `whoAreYou`
+
+Please note, we have created an **instance** of the `Animal` class. Now we can create an instance of the `Dog` class. Let's do this and call method `whoAreYou`
+
 ```javascript
 var Dog = ClassMaker.extend(new Animal("Dog"));
 var dog = new Dog;
@@ -39,7 +48,9 @@ console.log(dog.whoAreYou());
 ```bash
 > I am Dog, I can run
 ```
-Now let's extend class `Animal` and create class `Duck`. For this we describe object `bird` which extends class `Duck`
+
+Now let's extend the `Animal` class and create a `Duck` class. For this purpose, we describe a `bird` object which extends the `Duck` class.
+
 ```javascript
 var bird = {
     ability: "fly",
@@ -54,19 +65,23 @@ Duck = Duck.extend(bird);
 var duck = new Duck;
 console.log(duck.whoAreYou());
 ```
+
 ```bash
 > I am Duck, I can fly
 ```
-We have added properties of object `bird` to properties of class `Duck` and **overrode** class `Duck`.
-We have added field `ability` and **overrode (hidden)** parent method `getAbility` of class `Duck`.
 
-**Note:** Next code does not change class `Duck` 
+We have added properties of the `bird` object to properties of the `Duck` class and **overrode** the `Duck` class.
+We have added an `ability` field and **overrode (hidden)** parent method `getAbility` of the `Duck` class.
+
+>**Note:** The following code does not change the `Duck` class:
+ 
 ```javascript
 Duck.extend(bird);
 ```
-Method `extend` returns new class! It does not change curent class or parent object!
 
-But what should we do if we need to call parent method? Let's see next example.
+The `extend` method returns a new class! It does not change the current class or the parent object!
+
+But what should we do if we need to call the parent method? Let's see an example.
 
 ```javascript
 var SwimDuck = Duck.extend({
@@ -77,9 +92,11 @@ var SwimDuck = Duck.extend({
 swimDuck  = new SwimDuck();
 console.log(swimDuck.whoAreYou());
 ```
+
 ```bash
 > I am Duck, I can fly, and swim
 ```
-So all you parent methods are stored and you can call them using method _super() into method body.
+
+So, all of your parent methods are stored and you can call them using method _super() into the method body.
 
 Good Luck!
